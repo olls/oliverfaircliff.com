@@ -1,4 +1,4 @@
 Oliver-Faircliff
 ================
 
-My personal website, find it at [http://olls.dvbris.com](http://olls.dvbris.com).
+My personal website, find it at [olls.dvbris.com](http://olls.dvbris.com).
