@@ -1,9 +1,24 @@
 @import url(http://fonts.googleapis.com/css?family=Fauna+One|Signika+Negative|Andika|Varela+Round|Open+Sans:400,300);
 
+html, body {
+    overflow-x: hidden;
+}
 body {
     background-image: url(background.png);
     padding: 0;
     margin: 0;
+}
+a {
+    color: #8F4800;
+}
+a:hover {
+    color: #EFA860;
+}
+a:active {
+    color: #BF7830;
+}
+a:visited {
+    color: #6F2800;
 }
 
 header {
@@ -12,7 +27,7 @@ header {
 }
 header > h1 {
     padding: 0;
-    margin: 10px;
+    margin: 0;
     text-align: center;
 
     font-family: 'Fauna One', Rockwell, Georgia, "Times New Roman", Times, serif;
@@ -20,10 +35,14 @@ header > h1 {
     text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;
 }
 
-#posts, ul {
+#main {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+#posts {
     list-style: none;
     margin: 15px 50px;
-    padding: 0;
     padding: 0 15px 10px;
     background-color: rgba(255,255,255, 0.1);
     border-radius: 15px;
@@ -31,12 +50,41 @@ header > h1 {
     -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.7);
     box-shadow:         inset 0 0 5px rgba(0, 0, 0, 0.7);
 }
+#posts {
+    margin-right: 415px;
+}
 #posts > .post {
     padding: 0;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     color: #202020;
 }
+
+#sidebar {
+    position: absolute;
+    top: -15px;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#sidebar > li:not(#twitter):not(#github) {
+    font-family: 'Open Sans', sans-serif;
+    width: 300px;
+    color: #202020;
+    margin: 15px 50px;
+    padding: 0 15px 10px;
+    background-color: rgba(255,255,255, 0.1);
+    border-radius: 15px;
+    -moz-box-shadow:    inset 0 0 5px rgba(0, 0, 0, 0.7);
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.7);
+    box-shadow:         inset 0 0 5px rgba(0, 0, 0, 0.7);
+}
+#sidebar > li#twitter, #sidebar > li#github {
+    width: 328px;
+    margin: 15px 50px;
+}
+
 h2, h3 {
     padding: 0;
     margin: 0;
@@ -64,12 +112,32 @@ hr {
 }
 
 footer {
-    border-top: 3px solid #000;
+    width: 100%;
     background-image: url(footer-background.png);
-    margin-top: 10px;
     padding: 10px;
+    height: 45px;
+    margin-top: 60px;
+    
+    border-top: 2px solid #050505;
     box-shadow: inset 1px 4px 15px -6px rgba(0, 0, 0, 1);
     color: #001018;
     text-shadow: 0 0 1px #00141A;
     text-align: center;
+}
+
+@media all and (max-width: 1000px) {
+    #posts, #sidebar {
+        margin: 0 0 10px 0;
+        border-radius: 0;
+        position: relative;
+        top: 0;
+        width: 100%
+    }
+}
+
+::selection {
+    background: #BF7830;
+}
+::-moz-selection {
+    background: #BF7830;
 }

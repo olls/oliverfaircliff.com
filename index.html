@@ -5,14 +5,30 @@
         <title>Oliver Faircliff</title>
         
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/2.1.3/normalize.min.css">
+        <link rel="stylesheet" href="github.css">
         <link rel="stylesheet" href="style.css">
 
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/FitText.js/1.1/jquery.fittext.min.js"></script>
+        <script src="jquery.github.js"></script>
         
         <script>
             $(document).ready(function() {
-                $("h1").fitText();
+                // Header
+                $("h1").fitText(1, {
+                    minFontSize: '30px', 
+                    maxFontSize: '130px' 
+                });
+
+                // Github
+                $('#github').github({
+                    user: 'olls',
+                    width: '328px',
+                    show_repos: 4
+                })
+
+                // Twitter
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
             });
         </script>
     </head>
@@ -20,39 +36,58 @@
         <header>
             <h1>Oliver Faircliff</h1>
         </header>
-        <ol id="posts">
-            <hr>
-            <li class="post">
-                <h2>Post Number 1</h2>
-                <p>Blah blah blah...</p>
-            </li>
-            <hr>
-            <li class="post">
-                <h2>Post Number 2</h2>
-                <p>Blah blah blah...</p>
-            </li>
-            <hr>
-            <li class="post">
-                <h2>Post Number 3</h2>
-                <p>Blah blah blah...</p>
-            </li>
-            <hr>
-            <li class="post">
-                <h2>Post Number 4</h2>
-                <p>Blah blah blah...</p>
-            </li>
-            <hr>
-            <li class="post">
-                <h2>Post Number 5</h2>
-                <p>Blah blah blah...</p>
-            </li>
-        </ol>
-        <aside>
-            <ul>
-                <h3>Twitter</h3>
-                <p>Here is a link to my <a href="http://twitter.com/olls96">twitter</a>.</p>
+        <div id="main">
+            <ol id="posts">
+                <hr>
+                <li class="post">
+                    <h2>Post Number 1</h2>
+                    <p>Blah blah blah...</p>
+                </li>
+                <hr>
+                <li class="post">
+                    <h2>Post Number 2</h2>
+                    <p>Blah blah blah...</p>
+                </li>
+                <hr>
+                <li class="post">
+                    <h2>Post Number 3</h2>
+                    <p>Blah blah blah...</p>
+                </li>
+                <hr>
+                <li class="post">
+                    <h2>Post Number 4</h2>
+                    <p>Blah blah blah...</p>
+                </li>
+                <hr>
+                <li class="post">
+                    <h2>Post Number 5</h2>
+                    <p>Blah blah blah...</p>
+                </li>
+                <hr>
+                <li class="post">
+                    <h2>Post Number 6</h2>
+                    <p>Blah blah blah...</p>
+                </li>
+                <hr>
+                <li class="post">
+                    <h2>Post Number 7</h2>
+                    <p>Blah blah blah...</p>
+                </li>
+            </ol>
+            <ul id="sidebar">
+                <li>
+                    <h2>Welcome</h2>
+                    <img src="http://gravatar.com/avatar/6605be6c54e001a8d4a7395bc9868075?s=50" style="float:left;padding-right:10px;padding-top:10px;" alt="My Logo">
+                    <p>Programmer, web developer and electronics hobbyist in the UK.</p>
+                </li>
+                <li id="twitter">
+                    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/olls96" data-widget-id="407999364649328640">Tweets by @olls96</a>
+                </li>
+                <li id="github">
+                    
+                </li>
             </ul>
-        </aside>
+        </div>
         <footer>
             <p>Copyright &copy; Oliver Faircliff 2013</p>
         </footer>
