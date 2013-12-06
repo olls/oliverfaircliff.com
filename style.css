@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Fauna+One|Signika+Negative|Andika|Varela+Round|Open+Sans:400,300);
 
-html, body {
+html {
     overflow-x: hidden;
 }
 body {
@@ -68,7 +68,7 @@ header > h1 {
     margin: 0;
     list-style: none;
 }
-#sidebar > li:not(#twitter):not(#github) {
+#sidebar > li:not(#twitter) {
     font-family: 'Open Sans', sans-serif;
     width: 300px;
     color: #202020;
@@ -80,9 +80,17 @@ header > h1 {
     -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.7);
     box-shadow:         inset 0 0 5px rgba(0, 0, 0, 0.7);
 }
-#sidebar > li#twitter, #sidebar > li#github {
+#sidebar > li#twitter {
     width: 328px;
     margin: 15px 50px;
+}
+#sidebar > li#github > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#sidebar > li#github li {
+
 }
 
 h2, h3 {
