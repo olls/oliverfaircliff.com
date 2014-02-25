@@ -3,9 +3,9 @@
 <html>
     <head>
         <title>Oliver Faircliff</title>
-        
+
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/2.1.3/normalize.min.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/home.css">
 
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/FitText.js/1.1/jquery.fittext.min.js"></script>
@@ -14,8 +14,8 @@
             $(document).ready(function() {
                 // Header
                 $("h1").fitText(1, {
-                    minFontSize: '30px', 
-                    maxFontSize: '130px' 
+                    minFontSize: '30px',
+                    maxFontSize: '130px'
                 });
 
 
@@ -27,9 +27,9 @@
                             $('#github ul').append(
                                 $('<li />').append(
 
-                                    ' ' + e.actor.login + ' ' + 
-                                    ' ' + e.type + ' ' + 
-                                    ' ' + 'on' + ' ' + 
+                                    ' ' + e.actor.login + ' ' +
+                                    ' ' + e.type + ' ' +
+                                    ' ' + 'on' + ' ' +
                                     ' ' + e.repo.name + ' '
 
                                 )
@@ -101,14 +101,14 @@
             <ul id="sidebar">
                 <li>
                     <h2>Welcome</h2>
-                    <img src="http://gravatar.com/avatar/6605be6c54e001a8d4a7395bc9868075?s=50" style="float:left;padding-right:10px;padding-top:10px;" alt="My Logo">
+                    <img src="http://gravatar.com/avatar/6605be6c54e001a8d4a7395bc9868075?s=50" id="logo" alt="My Logo">
                     <p>Programmer, web developer and electronics hobbyist in the UK.</p>
                 </li>
                 <li id="twitter">
                     <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/olls96" data-widget-id="407999364649328640">Tweets by @olls96</a>
                 </li>
                 <li id="github">
-                    
+
                 </li>
             </ul>
         </div>
