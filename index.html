@@ -1,65 +1,21 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
+
         <title>Oliver Faircliff</title>
+        <meta charset="UTF-8">
 
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/2.1.3/normalize.min.css">
         <link rel="stylesheet" href="css/home.css">
 
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/FitText.js/1.1/jquery.fittext.min.js"></script>
-
-        <script>
-            $(document).ready(function() {
-                // Header
-                $("h1").fitText(1, {
-                    minFontSize: '30px',
-                    maxFontSize: '130px'
-                });
-
-
-                // Github
-                $.ajax('https://api.github.com/users/olls/events/public')
-                    .done(function (data) {
-                        $('#github').append($('<ul />'))
-                        $.each(data, function (i, e) {
-                            $('#github ul').append(
-                                $('<li />').append(
-
-                                    ' ' + e.actor.login + ' ' +
-                                    ' ' + e.type + ' ' +
-                                    ' ' + 'on' + ' ' +
-                                    ' ' + e.repo.name + ' '
-
-                                )
-                            );
-                            console.log(e.actor.login);
-                        });
-
-                });
-
-
-                // Twitter
-                !function (d, s, id) {
-                    var js;
-                    var fjs = d.getElementsByTagName(s)[0];
-                    var p = /^http:/.test(d.location) ? 'http' : 'https';
-                    if (!d.getElementById(id)) {
-                        js = d.createElement(s);
-                        js.id = id;
-                        js.src = p + "://platform.twitter.com/widgets.js";
-                        fjs.parentNode.insertBefore(js, fjs);
-                    }
-                } (document, "script", "twitter-wjs");
-
-            });
-        </script>
     </head>
     <body>
+
         <header>
             <h1>Oliver Faircliff</h1>
         </header>
+
         <div id="main">
             <ol id="posts">
                 <hr>
@@ -99,10 +55,9 @@
                 </li>
             </ol>
             <ul id="sidebar">
-                <li>
+                <li id="bio">
                     <h2>Welcome</h2>
                     <img src="http://gravatar.com/avatar/6605be6c54e001a8d4a7395bc9868075?s=50" id="logo" alt="My Logo">
-                    <p>Programmer, web developer and electronics hobbyist in the UK.</p>
                 </li>
                 <li id="twitter">
                     <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/olls96" data-widget-id="407999364649328640">Tweets by @olls96</a>
@@ -112,8 +67,12 @@
                 </li>
             </ul>
         </div>
+
         <footer>
             <p>Copyright &copy; Oliver Faircliff 2013</p>
         </footer>
+
+        <script src="js/utils.js"></script>
+        <script src="js/home.js"></script>
     </body>
 </html>
