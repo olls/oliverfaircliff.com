@@ -88,13 +88,7 @@ header > h1 {
     width: 328px;
     margin: 15px 50px;
 }
-#sidebar > li#github > ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-#sidebar > li#github li {
-}
+
 h2, h3 {
     padding: 0;
     margin: 0;
