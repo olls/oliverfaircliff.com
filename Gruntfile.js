@@ -25,6 +25,10 @@ module.exports = function(grunt) {
       main: {
         src: 'tmp/main.css',
         dest: 'tmp/main.css'
+      },
+      dev: {
+        src: 'tmp/main.css',
+        dest: 'src/css/main.min.css'
       }
     },
     cssmin: {
@@ -38,8 +42,8 @@ module.exports = function(grunt) {
     },
     watch: {
         styles: {
-            files: ['src/css/style.css'],
-            tasks: ['autoprefixer']
+            files: ['src/css/main.scss', 'src/css/_github.scss'],
+            tasks: ['sass', 'autoprefixer:dev']
         }
     },
 

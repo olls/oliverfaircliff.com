@@ -1,0 +1,86 @@
+@import url(http://fonts.googleapis.com/css?family=Lilita+One|Droid+Sans);
+
+html {
+    overflow-x: hidden;
+}
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Droid Sans', sans-serif;
+}
+
+header {
+  font-family: 'Lilita One', cursive;
+  position: relative;
+  h1 {
+    margin: 0;
+    font-size: 5em;
+    font-weight: normal;
+    text-align: center;
+  }
+  p {
+    margin: 0;
+    margin-top: -10px;
+    text-align: center;
+    a {
+      $base-color: #08352D;
+      font-weight: normal;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $base-color;
+      margin: 0 20px;
+      &:hover {
+        color: lighten($base-color, 20%);
+      }
+      &:after {
+        content: '!';
+      }
+    }
+  }
+}
+
+article {
+  a {
+    display: block;
+    padding: 50px;
+    color: white;
+    text-decoration: none;
+    h2 {
+      margin-top: 0;
+      text-decoration: underline;
+      font-size: 2em;
+    }
+  }
+  $hover-diff: 3%;
+  $colors: #D16223,
+           #2D7A0B,
+           #12847C,
+           #CFB433,
+           #A84F35,
+           #9BC150;
+  $i: 0;
+  @each $color in $colors {
+    $i: $i + 1;
+    &:nth-child(#{length($colors)}n+#{$i}) {
+      background-color: $color;
+      border-top: 10px dashed darken($color, 15%);
+
+      &:hover {
+        background-color: lighten($color, $hover-diff);
+        $d: 15% - $hover-diff;
+        border-top: 10px dashed darken($color, $d);
+      }
+    }
+  }
+}
+
+footer {
+  $base-color: #08352D;
+  background-color: $base-color;
+  margin: 0;
+  padding: 30px;
+  color: white;
+  border-top: 10px dashed lighten($base-color, 10%);
+}
+
+@import 'github';
