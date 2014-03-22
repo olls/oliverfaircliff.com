@@ -48,45 +48,110 @@ section {
       -ms-flex-flow: row wrap;
       flex-flow: row wrap; } }
   section article {
-    margin: 0;
+    position: relative;
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
-    min-width: 50%; }
+    font-size: 1.2em;
+    min-width: 50%;
+    color: white;
+    margin: 0;
+    padding: 50px; }
+    @media screen and (max-width: 400px) {
+      section article {
+        text-align: center;
+        font-size: 1em; } }
     @media screen and (min-width: 1800px) {
       section article {
-        min-width: 33.33333%; } }
+        min-width: 33.33333%;
+        font-size: 0.83333em; }
+        section article:first-child {
+          -webkit-box-flex: 3;
+          -webkit-flex-grow: 3;
+          -ms-flex-positive: 3;
+          flex-grow: 3; } }
     @media screen and (min-width: 2200px) {
       section article {
-        min-width: 25%; } }
+        min-width: 25%;
+        font-size: 1em; }
+        section article:first-child {
+          -webkit-box-flex: 4;
+          -webkit-flex-grow: 4;
+          -ms-flex-positive: 4;
+          flex-grow: 4; } }
     @media screen and (min-width: 2600px) {
       section article {
-        min-width: 20%; } }
+        min-width: 20%;
+        font-size: 1.16667em; }
+        section article:first-child {
+          -webkit-box-flex: 5;
+          -webkit-flex-grow: 5;
+          -ms-flex-positive: 5;
+          flex-grow: 5; } }
     @media screen and (min-width: 3000px) {
       section article {
-        min-width: 16.66667%; } }
+        min-width: 16.66667%;
+        font-size: 1.33333em; }
+        section article:first-child {
+          -webkit-box-flex: 6;
+          -webkit-flex-grow: 6;
+          -ms-flex-positive: 6;
+          flex-grow: 6; } }
     @media screen and (min-width: 3400px) {
       section article {
-        min-width: 14.28571%; } }
+        min-width: 14.28571%;
+        font-size: 1.5em; }
+        section article:first-child {
+          -webkit-box-flex: 7;
+          -webkit-flex-grow: 7;
+          -ms-flex-positive: 7;
+          flex-grow: 7; } }
     @media screen and (min-width: 3800px) {
       section article {
-        min-width: 12.5%; } }
+        min-width: 12.5%;
+        font-size: 1.66667em; }
+        section article:first-child {
+          -webkit-box-flex: 8;
+          -webkit-flex-grow: 8;
+          -ms-flex-positive: 8;
+          flex-grow: 8; } }
     @media screen and (min-width: 4200px) {
       section article {
-        min-width: 11.11111%; } }
+        min-width: 11.11111%;
+        font-size: 1.83333em; }
+        section article:first-child {
+          -webkit-box-flex: 9;
+          -webkit-flex-grow: 9;
+          -ms-flex-positive: 9;
+          flex-grow: 9; } }
     @media screen and (min-width: 4600px) {
       section article {
-        min-width: 10%; } }
-    section article a {
-      display: block;
-      padding: 50px;
-      color: white;
-      text-decoration: none; }
-      section article a h2 {
-        margin-top: 0;
-        text-decoration: underline;
+        min-width: 10%;
         font-size: 2em; }
+        section article:first-child {
+          -webkit-box-flex: 10;
+          -webkit-flex-grow: 10;
+          -ms-flex-positive: 10;
+          flex-grow: 10; } }
+    section article:first-child img {
+      float: right;
+      width: 15%;
+      min-width: 100px; }
+      @media screen and (max-width: 400px) {
+        section article:first-child img {
+          width: 100%; } }
+    section article.link {
+      padding: 0; }
+    section article a {
+      color: white;
+      padding: 50px;
+      display: block;
+      text-decoration: none; }
+    section article h2 {
+      margin-top: 0;
+      text-decoration: underline;
+      font-size: 2em; }
     section article:nth-child(6n+1) {
       background-color: #d16223;
       border-top: 10px dashed rgba(0, 0, 0, 0.4); }

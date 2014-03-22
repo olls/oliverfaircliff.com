@@ -54,24 +54,51 @@ section {
   }
 
   article {
-    margin: 0;
+    $small: 400px;
+    position: relative;
     flex-grow: 1;
+    font-size: 1.2em;
     min-width: 50%;
+    color: white;
+    margin: 0;
+    padding: 50px;
+    @media screen and (max-width: $small) {
+      text-align: center;
+      font-size: 1em;
+    }
     @for $i from 3 through 10 {
       @media screen and (min-width: 1800px + (($i - 3) * 400px)) {
         min-width: 100% / $i;
+        font-size: 1em * (($i + 2) / 6);
+        &:first-child {
+          flex-grow: $i;
+        }
       }
     }
-    a {
-      display: block;
-      padding: 50px;
-      color: white;
-      text-decoration: none;
-      h2 {
-        margin-top: 0;
-        text-decoration: underline;
-        font-size: 2em;
+    &:first-child {
+      img {
+        @media screen and (max-width: $small) {
+          width: 100%;
+        }
+        float: right;
+        width: 15%;
+        min-width: 100px;
       }
+    }
+
+    &.link {
+      padding: 0;
+    }
+    a {
+      color: white;
+      padding: 50px;
+      display: block;
+      text-decoration: none;
+    }
+    h2 {
+      margin-top: 0;
+      text-decoration: underline;
+      font-size: 2em;
     }
     $hover-diff: 3%;
     $colors: #D16223,
