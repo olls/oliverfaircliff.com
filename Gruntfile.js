@@ -1,6 +1,8 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
+    // JS
     uglify: {
       combine: {
         options: {
@@ -11,22 +13,37 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    // CSS
+    sass: {
+      main: {
+        src: 'src/css/main.scss',
+        dest: 'tmp/main.css'
+      }
+    },
     autoprefixer: {
       main: {
-        expand: true,
-        src: 'src/css/*.css'
+        src: 'tmp/main.css',
+        dest: 'tmp/main.css'
       }
     },
     cssmin: {
-      combine: {
+      main: {
         options: {
           banner: '/*! <%= pkg.name %> <%= grunt.template.today() %> */\n'
         },
-        files: {
-          'build/css/main.min.css': ['src/css/*.css', '!src/css/main.min.css']
-        }
+        src: 'tmp/main.css',
+        dest: 'build/css/main.min.css'
       }
     },
+    watch: {
+        styles: {
+            files: ['src/css/style.css'],
+            tasks: ['autoprefixer']
+        }
+    },
+
+    // HTML
     htmlmin: {
       main: {
         options: {
@@ -46,6 +63,8 @@ module.exports = function(grunt) {
         dest: 'build/'
       }
     },
+
+    // Other
     copy: {
       main: {
         files: [
@@ -60,11 +79,14 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-htmlmin');
-  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks("grunt-contrib-uglify");
+  grunt.loadNpmTasks("grunt-contrib-sass");
+  grunt.loadNpmTasks("grunt-contrib-cssmin");
+  grunt.loadNpmTasks("grunt-autoprefixer");
+  grunt.loadNpmTasks("grunt-contrib-watch");
+  grunt.loadNpmTasks("grunt-contrib-htmlmin");
+  grunt.loadNpmTasks("grunt-contrib-copy");
 
-  grunt.registerTask('default', ['uglify', 'cssmin', 'htmlmin', 'copy']);
+  grunt.registerTask('default', ['uglify', 'sass', 'autoprefixer', 'cssmin', 'htmlmin', 'copy']);
 
 };
