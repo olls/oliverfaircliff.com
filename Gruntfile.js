@@ -66,20 +66,6 @@ module.exports = function(grunt) {
         src: ['**/*.html'],
         dest: 'build/'
       }
-    },
-
-    // Other
-    copy: {
-      main: {
-        files: [
-          {
-            expand: true,
-            cwd: 'src',
-            src: ['images/*'],
-            dest: 'build/'
-          }
-        ],
-      }
     }
   });
 
