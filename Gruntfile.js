@@ -41,10 +41,10 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-        styles: {
-            files: ['src/css/main.scss', 'src/css/_github.scss'],
-            tasks: ['sass', 'autoprefixer:dev']
-        }
+      styles: {
+        files: ['src/css/main.scss', 'src/css/_github.scss'],
+        tasks: ['sass', 'autoprefixer:dev']
+      }
     },
 
     // HTML
@@ -77,6 +77,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-htmlmin");
   grunt.loadNpmTasks("grunt-contrib-copy");
 
-  grunt.registerTask('default', ['uglify', 'sass', 'autoprefixer', 'cssmin', 'htmlmin', 'copy']);
+  grunt.registerTask('default', ['uglify', 'sass', 'autoprefixer', 'cssmin', 'htmlmin']);
 
 };
