@@ -1,15 +1,21 @@
 @import url(http://fonts.googleapis.com/css?family=Lilita+One|Droid+Sans);
 
+$footer-bg: #08352D;
+
 html {
-    overflow-x: hidden;
-}
-html, body {
+  overflow-x: hidden;
+  body {
     padding: 0;
     margin: 0;
     font-family: 'Droid Sans', sans-serif;
+    background-color: $footer-bg;
+  }
 }
 
 header {
+  padding: 0;
+  margin: 0;
+  background-color: white;
   font-family: 'Lilita One', cursive;
   position: relative;
   h1 {
@@ -39,48 +45,64 @@ header {
   }
 }
 
-article {
-  a {
-    display: block;
-    padding: 50px;
-    color: white;
-    text-decoration: none;
-    h2 {
-      margin-top: 0;
-      text-decoration: underline;
-      font-size: 2em;
-    }
+section {
+  background-color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  @media screen and (min-width: 1200px) {
+    flex-flow: row wrap;
   }
-  $hover-diff: 3%;
-  $colors: #D16223,
-           #2D7A0B,
-           #12847C,
-           #CFB433,
-           #A84F35,
-           #9BC150;
-  $i: 0;
-  @each $color in $colors {
-    $i: $i + 1;
-    &:nth-child(#{length($colors)}n+#{$i}) {
-      background-color: $color;
-      border-top: 10px dashed darken($color, 15%);
 
-      &:hover {
-        background-color: lighten($color, $hover-diff);
-        $d: 15% - $hover-diff;
-        border-top: 10px dashed darken($color, $d);
+  article {
+    margin: 0;
+    flex-grow: 1;
+    min-width: 50%;
+    @for $i from 3 through 10 {
+      @media screen and (min-width: 1800px + (($i - 3) * 400px)) {
+        min-width: 100% / $i;
+      }
+    }
+    a {
+      display: block;
+      padding: 50px;
+      color: white;
+      text-decoration: none;
+      h2 {
+        margin-top: 0;
+        text-decoration: underline;
+        font-size: 2em;
+      }
+    }
+    $hover-diff: 3%;
+    $colors: #D16223,
+             #2D7A0B,
+             #12847C,
+             #CFB433,
+             #A84F35,
+             #9BC150;
+    $i: 0;
+    @each $color in $colors {
+      $i: $i + 1;
+      &:nth-child(#{length($colors)}n+#{$i}) {
+        background-color: $color;
+        border-top: 10px dashed darken($color, 15%);
+
+        &:hover {
+          background-color: lighten($color, $hover-diff);
+          $d: 15% - $hover-diff;
+          border-top: 10px dashed darken($color, $d);
+        }
       }
     }
   }
 }
 
 footer {
-  $base-color: #08352D;
-  background-color: $base-color;
+  background-color: $footer-bg;
   margin: 0;
   padding: 30px;
   color: white;
-  border-top: 10px dashed lighten($base-color, 10%);
+  border-top: 10px dashed lighten($footer-bg, 10%);
 }
 
 @import 'github';
