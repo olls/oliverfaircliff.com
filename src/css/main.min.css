@@ -89,40 +89,34 @@ section {
         font-size: 2em; }
     section article:nth-child(6n+1) {
       background-color: #d16223;
-      border-top: 10px dashed #8f4318; }
+      border-top: 10px dashed rgba(0, 0, 0, 0.4); }
       section article:nth-child(6n+1):hover {
-        background-color: #db6928;
-        border-top: 10px dashed #9d491a; }
+        background-color: #db6928; }
     section article:nth-child(6n+2) {
       background-color: #2d7a0b;
-      border-top: 10px dashed #133405; }
+      border-top: 10px dashed rgba(0, 0, 0, 0.4); }
       section article:nth-child(6n+2):hover {
-        background-color: #32880c;
-        border-top: 10px dashed #184206; }
+        background-color: #32880c; }
     section article:nth-child(6n+3) {
       background-color: #12847c;
-      border-top: 10px dashed #09413d; }
+      border-top: 10px dashed rgba(0, 0, 0, 0.4); }
       section article:nth-child(6n+3):hover {
-        background-color: #149189;
-        border-top: 10px dashed #0b4e49; }
+        background-color: #149189; }
     section article:nth-child(6n+4) {
       background-color: #cfb433;
-      border-top: 10px dashed #937f23; }
+      border-top: 10px dashed rgba(0, 0, 0, 0.4); }
       section article:nth-child(6n+4):hover {
-        background-color: #d2b93f;
-        border-top: 10px dashed #9f8a25; }
+        background-color: #d2b93f; }
     section article:nth-child(6n+5) {
       background-color: #a84f35;
-      border-top: 10px dashed #6e3423; }
+      border-top: 10px dashed rgba(0, 0, 0, 0.4); }
       section article:nth-child(6n+5):hover {
-        background-color: #b45439;
-        border-top: 10px dashed #793926; }
+        background-color: #b45439; }
     section article:nth-child(6n+6) {
       background-color: #9bc150;
-      border-top: 10px dashed #729133; }
+      border-top: 10px dashed rgba(0, 0, 0, 0.4); }
       section article:nth-child(6n+6):hover {
-        background-color: #a1c55b;
-        border-top: 10px dashed #7a9c37; }
+        background-color: #a1c55b; }
 
 footer {
   background-color: #08352d;

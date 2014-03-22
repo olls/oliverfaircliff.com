@@ -85,12 +85,10 @@ section {
       $i: $i + 1;
       &:nth-child(#{length($colors)}n+#{$i}) {
         background-color: $color;
-        border-top: 10px dashed darken($color, 15%);
+        border-top: 10px dashed rgba(0, 0, 0, 0.4);
 
         &:hover {
           background-color: lighten($color, $hover-diff);
-          $d: 15% - $hover-diff;
-          border-top: 10px dashed darken($color, $d);
         }
       }
     }
