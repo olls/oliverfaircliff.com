@@ -77,6 +77,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-htmlmin");
   grunt.loadNpmTasks("grunt-contrib-copy");
 
-  grunt.registerTask('default', ['uglify', 'sass', 'autoprefixer', 'cssmin', 'htmlmin']);
+  grunt.registerTask('default', ['uglify', 'sass', 'autoprefixer:main', 'cssmin', 'htmlmin']);
 
 };
