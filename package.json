@@ -1,5 +1,6 @@
 {
-  "name": "oliverfaircliff.com"
+    "name": "oliverfaircliff.com"
+  , "repository": "http://github.com/olls/oliverfaircliff.com"
   , "version": "0.1.0"
   , "devDependencies": {
       "grunt": "~0.4.2"
