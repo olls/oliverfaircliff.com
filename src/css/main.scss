@@ -69,7 +69,7 @@ section {
     @for $i from 3 through 10 {
       @media screen and (min-width: 1800px + (($i - 3) * 400px)) {
         min-width: 100% / $i;
-        font-size: 1em * (($i + 2) / 6);
+        font-size: (($i + 1em) / 4);
         &:first-child {
           flex-grow: $i;
         }
