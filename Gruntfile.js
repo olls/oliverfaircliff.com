@@ -40,12 +40,6 @@ module.exports = function(grunt) {
         dest: 'build/css/main.min.css'
       }
     },
-    watch: {
-      styles: {
-        files: ['src/css/main.scss', 'src/css/_github.scss'],
-        tasks: ['sass', 'autoprefixer:dev']
-      }
-    },
 
     // HTML
     htmlmin: {
@@ -73,10 +67,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-sass");
   grunt.loadNpmTasks("grunt-contrib-cssmin");
   grunt.loadNpmTasks("grunt-autoprefixer");
-  grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-contrib-htmlmin");
-  grunt.loadNpmTasks("grunt-contrib-copy");
 
   grunt.registerTask('default', ['uglify', 'sass', 'autoprefixer:main', 'cssmin', 'htmlmin']);
+  grunt.registerTask('dev', ['sass', 'autoprefixer:dev']);
 
 };
