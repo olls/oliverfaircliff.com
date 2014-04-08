@@ -9,7 +9,12 @@ module.exports = function(grunt) {
           banner: '/*! <%= pkg.name %> <%= grunt.template.today() %> */\n\n'
         },
         files: {
-          'build/js/main.min.js': ['src/js/*.js', '!src/js/main.min.js']
+          'build/js/main.min.js': [
+            'src/js/utils.js',
+            'src/js/github.js',
+            'src/js/twitter.js',
+            'src/js/home.js'
+          ]
         }
       }
     },
@@ -28,7 +33,7 @@ module.exports = function(grunt) {
       },
       dev: {
         src: 'tmp/main.css',
-        dest: 'src/css/main.min.css'
+        dest: 'src/css/main.css'
       }
     },
     cssmin: {
@@ -42,6 +47,14 @@ module.exports = function(grunt) {
     },
 
     // HTML
+    processhtml: {
+      main: {
+        expand: true,
+        cwd: 'src',
+        src: ['**/*.html'],
+        dest: 'tmp/'
+      }
+    },
     htmlmin: {
       main: {
         options: {
@@ -56,20 +69,31 @@ module.exports = function(grunt) {
           removeOptionalTags: true
         },
         expand: true,
-        cwd: 'src',
+        cwd: 'tmp',
         src: ['**/*.html'],
         dest: 'build/'
       }
     }
   });
 
-  grunt.loadNpmTasks("grunt-contrib-uglify");
-  grunt.loadNpmTasks("grunt-contrib-sass");
-  grunt.loadNpmTasks("grunt-contrib-cssmin");
-  grunt.loadNpmTasks("grunt-autoprefixer");
-  grunt.loadNpmTasks("grunt-contrib-htmlmin");
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-processhtml');
 
-  grunt.registerTask('default', ['uglify', 'sass', 'autoprefixer:main', 'cssmin', 'htmlmin']);
-  grunt.registerTask('dev', ['sass', 'autoprefixer:dev']);
-
+  grunt.registerTask('default', [
+    'uglify',
+    'sass',
+    'autoprefixer:dev',
+    'autoprefixer:main',
+    'cssmin',
+    'processhtml',
+    'htmlmin'
+  ]);
+  grunt.registerTask('dev', [
+    'sass',
+    'autoprefixer:dev'
+  ]);
 };

@@ -57,6 +57,7 @@ section {
     $small: 400px;
     position: relative;
     flex-grow: 1;
+    display: block;
     font-size: 1.2em;
     min-width: 50%;
     color: white;
@@ -88,17 +89,24 @@ section {
 
     &.link {
       padding: 0;
-    }
-    a {
-      color: white;
-      padding: 50px;
-      display: block;
-      text-decoration: none;
+      a {
+        color: white;
+        display: block;
+        padding: 50px;
+        text-decoration: none;
+      }
     }
     h2 {
       margin-top: 0;
       text-decoration: underline;
       font-size: 2em;
+    }
+    &.link > a a, &:not(.link) a {
+      $base-color: #08352D;
+      color: $base-color;
+      &:hover {
+        color: lighten($base-color, 20%);
+      }
     }
     $hover-diff: 3%;
     $colors: #D16223,
