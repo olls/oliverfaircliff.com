@@ -1,4 +1,4 @@
 {
     "grunt": true,
-    "output": "/var/ww/projects/olls"
+    "output": "/var/www/projects/olls"
 }
