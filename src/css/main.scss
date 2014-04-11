@@ -54,19 +54,18 @@ section {
   }
 
   article {
+
+    // Responsiveness
     $small: 400px;
     position: relative;
     flex-grow: 1;
     display: block;
-    font-size: 1.2em;
     min-width: 50%;
-    color: white;
-    margin: 0;
-    padding: 50px;
     @media screen and (max-width: $small) {
       text-align: center;
       font-size: 1em;
     }
+    // Different column arrangements
     @for $i from 3 through 10 {
       @media screen and (min-width: 1800px + (($i - 3) * 400px)) {
         min-width: 100% / $i;
@@ -76,38 +75,38 @@ section {
         }
       }
     }
-    &#bio {
-      img {
-        @media screen and (max-width: $small) {
-          width: 100%;
-        }
-        float: right;
-        width: 15%;
-        min-width: 100px;
+
+    // General
+    font-size: 1.2em;
+    color: white;
+    h2 {
+      margin-top: 0;
+      text-decoration: underline;
+      font-size: 2em;
+    }
+    // Link colors
+    &.link > a a, &:not(.link) a {
+      $link-color: #ccccff;
+      color: $link-color;
+      &:hover {
+        color: lighten($link-color, 20%);
       }
     }
 
+    // Link or plain style tiles
+    margin: 0;
+    padding: 50px;
     &.link {
       padding: 0;
-      a {
+      > a {
         color: white;
         display: block;
         padding: 50px;
         text-decoration: none;
       }
     }
-    h2 {
-      margin-top: 0;
-      text-decoration: underline;
-      font-size: 2em;
-    }
-    &.link > a a, &:not(.link) a {
-      $base-color: #08352D;
-      color: $base-color;
-      &:hover {
-        color: lighten($base-color, 20%);
-      }
-    }
+
+    // Backgrounds
     $hover-diff: 3%;
     $colors: #D16223,
              #2D7A0B,
@@ -127,6 +126,19 @@ section {
         }
       }
     }
+
+    // Tile specific styles
+    &#bio {
+      img {
+        @media screen and (max-width: $small) {
+          width: 100%;
+        }
+        float: right;
+        width: 15%;
+        min-width: 100px;
+      }
+    }
+
   }
 }
 
