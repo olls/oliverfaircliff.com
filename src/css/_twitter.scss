@@ -1,0 +1,40 @@
+#twitter-widget {
+  ul {
+    padding: 0;
+  }
+  li {
+    position: relative;
+    list-style: none;
+    padding: 5px;
+    margin-bottom: 0.5em;
+
+    .link:before {
+      color: white;
+      content: '\e603';
+      font-family: 'icomoon';
+      margin-right: 10px;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      speak: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+  .img-container {
+    display: block;
+    overflow: hidden;
+    margin-left: 25px;
+
+    img {
+      margin: -150px -250px;
+      transition: margin 0.5s ease;
+      &:hover {
+        margin: 0;
+      }
+    }
+
+  }
+}
