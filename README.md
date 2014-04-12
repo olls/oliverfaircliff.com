@@ -1,4 +1,4 @@
-Oliver-Faircliff
+Oliver Faircliff
 ================
 
 My personal website, find it at [oliverfaircliff.com](http://oliverfaircliff.com).
