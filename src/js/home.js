@@ -1,4 +1,12 @@
-var github = document.getElementById('github-widget')
-github_widget('olls', github);
+var users = {
+  github: 'olls',
+  twitter: 'olls96'
+}
 
-twitter_tagline('olls96', document.getElementById('bio'));
+var github = document.getElementById('github-widget')
+github_widget(users.github, github);
+
+var twitter = document.getElementById('twitter-widget')
+twitter_widget(users.twitter, twitter);
+
+twitter_tagline(users.twitter, document.getElementById('bio'));
