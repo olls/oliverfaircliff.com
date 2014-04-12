@@ -73,6 +73,20 @@ module.exports = function(grunt) {
         src: ['**/*.html'],
         dest: 'build/'
       }
+    },
+
+    // Other
+    copy: {
+      main: {
+        files: [
+          {
+            expand: true,
+            cwd: 'src',
+            src: ['fonts/*'],
+            dest: 'build/'
+          }
+        ]
+      }
     }
   });
 
@@ -81,6 +95,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-processhtml');
 
   grunt.registerTask('default', [
@@ -90,7 +105,8 @@ module.exports = function(grunt) {
     'autoprefixer:main',
     'cssmin',
     'processhtml',
-    'htmlmin'
+    'htmlmin',
+    'copy'
   ]);
   grunt.registerTask('dev', [
     'sass',

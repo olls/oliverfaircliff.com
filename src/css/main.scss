@@ -1,6 +1,17 @@
 @import url(http://fonts.googleapis.com/css?family=Lilita+One|Droid+Sans);
+@font-face {
+    font-family: 'icomoon';
+    src:url('../fonts/icomoon.eot?sfd1u1');
+    src:url('../fonts/icomoon.eot?#iefixsfd1u1') format('embedded-opentype'),
+        url('../fonts/icomoon.woff?sfd1u1') format('woff'),
+        url('../fonts/icomoon.ttf?sfd1u1') format('truetype'),
+        url('../fonts/icomoon.svg?sfd1u1#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 $footer-bg: #08352D;
+$link-color: #bf8;
 
 html {
   overflow-x: hidden;
@@ -84,14 +95,6 @@ section {
       text-decoration: underline;
       font-size: 2em;
     }
-    // Link colors
-    &.link > a a, &:not(.link) a {
-      $link-color: #ccccff;
-      color: $link-color;
-      &:hover {
-        color: lighten($link-color, 20%);
-      }
-    }
 
     // Link or plain style tiles
     margin: 0;
@@ -106,7 +109,7 @@ section {
       }
     }
 
-    // Backgrounds
+    // Multi color stuff
     $hover-diff: 3%;
     $colors: #D16223,
              #2D7A0B,
@@ -120,9 +123,24 @@ section {
       &:nth-child(#{length($colors)}n+#{$i}) {
         background-color: $color;
         border-top: 10px dashed rgba(0, 0, 0, 0.4);
-
+        transition: background-color 2s ease;
         &:hover {
           background-color: lighten($color, $hover-diff);
+        }
+
+        // Link colors
+        &.link > a a, &:not(.link) a {
+          color: darken($color, 25%);
+          text-decoration: none;
+          &:hover {
+            color: darken($color, 15%);
+          }
+        }
+        h2 a {
+          color: lighten($color, 40%) !important;
+          &:hover {
+            color: lighten($color, 30%) !important;
+          }
         }
       }
     }
@@ -136,6 +154,40 @@ section {
         float: right;
         width: 15%;
         min-width: 100px;
+      }
+    }
+    &#github-widget {
+      ul {
+        padding: 0;
+      }
+      li {
+        list-style: none;
+        padding: 5px;
+
+        &:before {
+          font-family: 'icomoon';
+          margin-right: 10px;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          speak: none;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+        &[data-type*=Push]:before {
+          content: '\e600';
+        }
+        &[data-type*=Issues]:before {
+          content: '\e602';
+        }
+        &[data-type*=Comment]:before {
+          content: '\e601';
+        }
+        &[data-type*=Fork]:before {
+          content: '\e605';
+        }
       }
     }
 
