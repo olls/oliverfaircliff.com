@@ -10,6 +10,20 @@
     font-style: normal;
 }
 
+// For @extend(ing)
+.icomoon {
+  font-family: 'icomoon';
+  margin-right: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 $footer-bg: #08352D;
 $link-color: #bf8;
 
@@ -157,6 +171,26 @@ section {
   }
 }
 
+.feed {
+  ul {
+    padding: 0;
+  }
+  li {
+    position: relative;
+    list-style: none;
+    padding: 5px;
+    margin-bottom: 0.5em;
+    background-color: rgba(255, 255, 255, 0.1);
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+}
+
+@import 'github';
+@import 'twitter';
+
 footer {
   background-color: $footer-bg;
   margin: 0;
@@ -164,6 +198,3 @@ footer {
   color: white;
   border-top: 10px dashed lighten($footer-bg, 10%);
 }
-
-@import 'github';
-@import 'twitter';

@@ -1,22 +1,7 @@
 #github-widget {
-  ul {
-    padding: 0;
-  }
   li {
-    list-style: none;
-    padding: 5px;
-
     &:before {
-      font-family: 'icomoon';
-      margin-right: 10px;
-      font-style: normal;
-      font-weight: normal;
-      font-variant: normal;
-      text-transform: none;
-      line-height: 1;
-      speak: none;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      @extend .icomoon;
     }
     &[data-type*=Push]:before {
       content: '\e600';

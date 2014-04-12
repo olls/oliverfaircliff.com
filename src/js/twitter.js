@@ -1,4 +1,4 @@
-function twitter_req(api, cb) {
+function twitter_req (api, cb) {
   makeRequest(
     'http://node.dvbris.com/twitter?api_url=' +
       encodeURIComponent('https://api.twitter.com/1.1/' + api),
@@ -20,7 +20,7 @@ function twitter_tagline (user, element) {
 
 var twitter_entities = [
   ['media', function (entity, text) {
-    return '<a href="'+entity.expanded_url+'" target="_blank" class="img-container"><img src="'+entity.media_url+':medium" title="'+entity.display_url+'"></div>';
+    return '<div class="img-container"><a href="'+entity.expanded_url+'" target="_blank"><img src="'+entity.media_url+':medium" title="'+entity.display_url+'"></a></div>';
   }],
   ['urls', function (entity, text) {
     return '<a href="'+entity.expanded_url+'" title="'+entity.display_url+'" target="_blank">'+entity.display_url+'</a>';
@@ -41,7 +41,6 @@ function twitter_widget (user, element) {
 
       data = data.slice(0, 10);
       data.forEach(function (item) {
-        console.log(item);
 
         var text = item.text;
 
@@ -82,5 +81,10 @@ function twitter_widget (user, element) {
 
       });
       element.appendChild(twitter_list);
+      var more = document.createElement('a');
+      more.href = 'http://twitter.com/olls96';
+      more.innerText = 'More...'
+      more.target = '_blank';
+      element.appendChild(more);
     });
 }

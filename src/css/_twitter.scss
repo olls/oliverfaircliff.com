@@ -1,40 +1,38 @@
 #twitter-widget {
-  ul {
-    padding: 0;
-  }
   li {
-    position: relative;
-    list-style: none;
-    padding: 5px;
-    margin-bottom: 0.5em;
-
     .link:before {
+      @extend .icomoon;
       color: white;
       content: '\e603';
-      font-family: 'icomoon';
-      margin-right: 10px;
-      font-style: normal;
-      font-weight: normal;
-      font-variant: normal;
-      text-transform: none;
-      line-height: 1;
-      speak: none;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
   }
   .img-container {
-    display: block;
-    overflow: hidden;
-    margin-left: 25px;
+    $collapsed: 150px;
+    $expanded: 600px;
 
-    img {
-      margin: -150px -250px;
-      transition: margin 0.5s ease;
+    display: block;
+    margin-top: 5px;
+    margin-left: 25px;
+    a {
+      display: inline-block;
+      overflow: hidden;
+      max-height: $collapsed;
+      transition: max-height 0.5s ease;
+      border: 10px solid rgba(0, 0, 0, 0.3);
+      border-radius: 40px;
+
       &:hover {
-        margin: 0;
+        max-height: $expanded;
+        img {
+          top: 0;
+        }
+      }
+      img {
+        height: $expanded;
+        position: relative;
+        top: - ($expanded / 2) + ($collapsed / 2);
+        transition: top 0.5s ease;
       }
     }
-
   }
 }
