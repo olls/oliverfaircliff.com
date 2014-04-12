@@ -81,9 +81,6 @@ section {
       @media screen and (min-width: 1800px + (($i - 3) * 400px)) {
         min-width: 100% / $i;
         font-size: (($i + 1em) / 4);
-        &#bio {
-          flex-grow: $i;
-        }
       }
     }
 
