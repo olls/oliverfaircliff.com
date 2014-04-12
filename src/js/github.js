@@ -39,5 +39,10 @@ function github_widget(user, element) {
 
     });
     element.appendChild(github_list);
+      var more = document.createElement('a');
+      more.href = 'http://github.com/olls';
+      more.innerText = 'More...'
+      more.target = '_blank';
+      element.appendChild(more);
   });
 }
