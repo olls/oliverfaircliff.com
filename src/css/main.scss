@@ -153,40 +153,6 @@ section {
         min-width: 100px;
       }
     }
-    &#github-widget {
-      ul {
-        padding: 0;
-      }
-      li {
-        list-style: none;
-        padding: 5px;
-
-        &:before {
-          font-family: 'icomoon';
-          margin-right: 10px;
-          font-style: normal;
-          font-weight: normal;
-          font-variant: normal;
-          text-transform: none;
-          line-height: 1;
-          speak: none;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-        }
-        &[data-type*=Push]:before {
-          content: '\e600';
-        }
-        &[data-type*=Issues]:before {
-          content: '\e602';
-        }
-        &[data-type*=Comment]:before {
-          content: '\e601';
-        }
-        &[data-type*=Fork]:before {
-          content: '\e605';
-        }
-      }
-    }
 
   }
 }
