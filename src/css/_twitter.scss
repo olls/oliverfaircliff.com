@@ -11,28 +11,58 @@
     $expanded: 600px;
 
     display: block;
+    position: relative;
     margin-top: 5px;
     margin-left: 25px;
-    a {
-      display: inline-block;
-      overflow: hidden;
-      max-height: $collapsed;
-      transition: max-height 0.5s ease;
-      border: 10px solid rgba(0, 0, 0, 0.3);
-      border-radius: 40px;
 
-      &:hover {
-        max-height: $expanded;
-        img {
-          top: 0;
+    @media all and (min-width: 550px) {
+
+      div {
+        border: 10px solid rgba(0, 0, 0, 0.3);
+        border-radius: 40px;
+
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+
+        // Vertical responsiveness:
+        transition: max-height 0.5s ease;
+        max-height: $collapsed;
+        &:hover {
+          max-height: $expanded;
+          a {
+            top: 0;
+          }
+        }
+        // Horizontal responsiveness:
+        max-width: calc(100% - 20px); // Borders
+        text-align: center;
+
+        a {
+          display: inline-block;
+          position: relative;
+
+          // Vertical responsiveness:
+          top: - ($expanded / 2) + ($collapsed / 2);
+          transition: top 0.5s ease;
+          height: $expanded;
+          img {
+            height: 100%;
+          }
+          // Horizontal responsiveness:
+          left: 100%;
+          margin-left: -200%;
         }
       }
+    }
+
+    @media all and (max-width: 549px) {
       img {
-        height: $expanded;
-        position: relative;
-        top: - ($expanded / 2) + ($collapsed / 2);
-        transition: top 0.5s ease;
+        max-width: calc(100% - 20px); // Borders
+        border: 10px solid rgba(0, 0, 0, 0.3);
+        border-radius: 40px;
       }
     }
+
   }
 }

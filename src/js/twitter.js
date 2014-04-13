@@ -20,7 +20,7 @@ function twitter_tagline (user, element) {
 
 var twitter_entities = [
   ['media', function (entity, text) {
-    return '<div class="img-container"><a href="'+entity.expanded_url+'" target="_blank"><img src="'+entity.media_url+':medium" title="'+entity.display_url+'"></a></div>';
+    return '<div class="img-container"><div><a href="'+entity.expanded_url+'" target="_blank"><img src="'+entity.media_url+':medium" title="'+entity.display_url+'"></a></div></div>';
   }],
   ['urls', function (entity, text) {
     return '<a href="'+entity.expanded_url+'" title="'+entity.display_url+'" target="_blank">'+entity.display_url+'</a>';
