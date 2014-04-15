@@ -114,6 +114,9 @@ section {
       text-decoration: underline;
       font-size: 2em;
     }
+    p {
+      text-align: justify;
+    }
     &> img {
       display: block;
       margin: 0 auto;
