@@ -114,6 +114,11 @@ section {
       text-decoration: underline;
       font-size: 2em;
     }
+    &> img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+    }
 
     // Link or plain style tiles
     margin: 0;
