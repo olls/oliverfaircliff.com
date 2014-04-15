@@ -82,20 +82,27 @@ section {
   article {
 
     // Responsiveness
-    $small: 400px;
+    $small: 550px;
     position: relative;
     flex-grow: 1;
+    flex-basis: 0px;
+    box-sizing: border-box;
     display: block;
-    min-width: 50%;
+    min-width: 100%;
     @media screen and (max-width: $small) {
       text-align: center;
       font-size: 1em;
     }
     // Different column arrangements
-    @for $i from 3 through 10 {
-      @media screen and (min-width: 1800px + (($i - 3) * 400px)) {
-        min-width: 100% / $i;
-        font-size: (($i + 1em) / 4);
+    @for $i from 2 through 10 {
+      @media screen and (min-width: ($i * 600px)) {
+        font-size: ($i * 0.15) + 0.9em;
+
+        min-width: 96% / $i;
+        &.feature {
+          min-width: 96% / ($i - 1);
+        }
+
       }
     }
 
@@ -162,12 +169,16 @@ section {
       img {
         @media screen and (max-width: $small) {
           width: 100%;
+          margin: 0 auto;
+          float: none;
         }
         float: right;
         width: 15%;
-        min-width: 100px;
+        min-width: 120px;
+        max-width: 250px;
       }
     }
+
 
   }
 }
