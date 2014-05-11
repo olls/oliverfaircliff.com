@@ -8,39 +8,89 @@ function github_req(user, cb) {
   );
 }
 
+var github_events = {
+  CommitCommentEvent: function (event, user, repo) {
+    return user+' commented on a commit in '+repo;
+  },
+  CreateEvent: function (event, user, repo) {
+    return user+' created '+repo;
+  },
+  DeleteEvent: function (event, user, repo) {
+    return user+' deleted '+repo;
+  },
+  DeploymentEvent: function (event, user, repo) {
+    return user+' deployed '+repo;
+  },
+  FollowEvent: function (event, user, repo) {
+    return user+' followed '+repo;
+  },
+  ForkEvent: function (event, user, repo) {
+    return user+' forked '+repo;
+  },
+  GollumEvent: function (event, user, repo) {
+    return user+' updated the wiki on '+repo;
+  },
+  IssueCommentEvent: function (event, user, repo) {
+    return user+' commented on an issue in '+repo;
+  },
+  IssuesEvent: function (event, user, repo) {
+    return user+' created an issue on '+repo;
+  },
+  MemberEvent: function (event, user, repo) {
+    return user+' added to '+repo;
+  },
+  PageBuildEvent: function (event, user, repo) {
+    return user+' built site on '+repo;
+  },
+  PublicEvent: function (event, user, repo) {
+    return user+' made open source: '+repo;
+  },
+  PullRequestEvent: function (event, user, repo) {
+    return user+' created pull request on '+repo;
+  },
+  PullRequestReviewCommentEvent: function (event, user, repo) {
+    return user+' commented on a pull request on '+repo;
+  },
+  PushEvent: function (event, user, repo) {
+    return user+' pushed to '+repo;
+  },
+  ReleaseEvent: function (event, user, repo) {
+    return user+' released a new version of '+repo;
+  },
+  TeamAddEvent: function (event, user, repo) {
+    return user+' was added to a team '+repo;
+  },
+  WatchEvent: function (event, user, repo) {
+    return user+' watched '+repo;
+  }
+}
+
 function github_widget(user, element) {
-  github_req('olls', function (data) {
+  github_req(user, function (data) {
     var github_list = document.createElement('ul');
 
     data = data.slice(0, 10);
     data.forEach(function (item) {
       var user = item.actor.login.charAt(0).toUpperCase() + item.actor.login.slice(1); // Capitalize
-      var repo = item.repo.name;
-      var type;
-      if (item.type == 'PushEvent') {
-        type = 'pushed to';
-      } else if (item.type == 'IssuesEvent') {
-        type = 'created an issue on';
-      } else if (item.type == 'CommitCommentEvent') {
-        type = 'commented on a commit in';
-      } else if (item.type == 'IssueCommentEvent') {
-        type = 'commented on an issue in';
-      } else if (item.type == 'ForkEvent') {
-        type = 'forked';
+      var repo = '<a href="http://github.com/'+item.repo.name+'" target="_blank">'+item.repo.name+'</a>';
+
+      console.log(item)
+      if (github_events[item.type]) {
+        var event_str = github_events[item.type](item, user, repo);
       } else {
-        type = item.type;
+        var event_str = item.type;
       }
 
       var li = document.createElement('li');
       github_list.appendChild(li);
 
-      li.innerHTML = user+' '+type+' <a href="http://github.com/'+repo+'" target="_blank">'+repo+'</a>';
+      li.innerHTML = event_str;
       li.setAttribute('data-type', item.type);
 
     });
     element.appendChild(github_list);
       var more = document.createElement('a');
-      more.href = 'http://github.com/olls';
+      more.href = 'http://github.com/' + user;
       more.innerText = 'More...'
       more.target = '_blank';
       element.appendChild(more);
