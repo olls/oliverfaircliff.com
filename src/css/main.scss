@@ -117,10 +117,14 @@ section {
     p {
       text-align: justify;
     }
-    &> img {
+    &> img, &> a img {
       display: block;
       margin: 0 auto;
       max-width: 100%;
+      &:not(.no-border) {
+        border: 5px solid #1E201F;
+        border-radius: 12px;
+      }
     }
 
     // Link or plain style tiles
