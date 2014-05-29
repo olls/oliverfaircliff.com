@@ -47,10 +47,15 @@ module.exports = function(grunt) {
     },
 
     // HTML
+    shell: {
+      markdown_templator: {
+        command: 'python3 markdown-templator/main.py src tmp'
+      }
+    },
     processhtml: {
       main: {
         expand: true,
-        cwd: 'src',
+        cwd: 'tmp',
         src: ['**/*.html'],
         dest: 'tmp/'
       }
@@ -81,7 +86,7 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            cwd: 'src',
+            cwd: 'tmp',
             src: ['fonts/*', 'images/*'],
             dest: 'build/'
           }
@@ -94,11 +99,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-processhtml');
 
   grunt.registerTask('default', [
+    'shell',
     'uglify',
     'sass',
     'autoprefixer:dev',
