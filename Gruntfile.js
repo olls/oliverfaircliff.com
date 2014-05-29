@@ -87,7 +87,7 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            cwd: 'tmp',
+            cwd: 'src',
             src: ['fonts/*', 'images/*'],
             dest: 'build/'
           }
