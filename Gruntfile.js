@@ -50,7 +50,7 @@ module.exports = function(grunt) {
     // HTML
     shell: {
       markdown_templator: {
-        command: 'python3 markdown-templator/main.py src tmp'
+        command: 'python3 markdown-templator.py src tmp'
       }
     },
     processhtml: {
