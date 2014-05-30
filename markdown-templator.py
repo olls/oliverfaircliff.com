@@ -63,8 +63,17 @@ def main():
         output_d = sys.argv[2]
     except IndexError:
         sys.exit('Usage: python main.py site_dir output_dir')
+
     for f in (site_d, output_d):
         if not os.path.isdir(f):
+
+            if f == output_d:
+                try:
+                    os.mkdir(f)
+                    continue
+                except OSError:
+                    pass
+
             sys.exit('Not a directory: ' + f)
 
     tmpltr = Templator(site_d, output_d)
