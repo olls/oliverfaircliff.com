@@ -1,1 +1,0 @@
-/home/olls/Documents/Programming/Python/markdown-templator/main.py
