@@ -1,5 +1,5 @@
 {
     "grunt": true,
-    "output": "/var/www/projects/olls",
+    "output": "/var/www/projects/oliverfaircliff.com",
     "url": "http://oliverfaircliff.com"
 }
