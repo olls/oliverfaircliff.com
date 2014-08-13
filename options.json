@@ -1,6 +1,6 @@
 {
     "grunt": true,
-    "output": "/var/www/projects",
+    "output": "/var/www",
     "ignore": ["projects"],
     "url": "http://oliverfaircliff.com"
 }
