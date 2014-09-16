@@ -1,6 +1,14 @@
 {
     "grunt": true,
-    "output": "/var/www/oliverfaircliff.com",
-    "ignore": ["projects"],
-    "url": "http://oliverfaircliff.com"
+    "hosts": {
+        "vps87319": {
+            "output": "/var/www/oliverfaircliff.com",
+            "ignore": ["projects"],
+            "url": "http://oliverfaircliff.com"
+        },
+        "raspberrypi": {
+            "output": "/var/www/projects/olls",
+            "url": "http://pi.dvbris.com/projects/olls"
+        }
+    }
 }
