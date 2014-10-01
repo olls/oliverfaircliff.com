@@ -5,4 +5,4 @@ When I started learning Python I built lots of small text based games, and I alw
 
 You can get the module and see some examples on the [Github page](http://github.com/olls/graphics).
 
-![Example output from a program using the module.](https://dl.dropboxusercontent.com/s/8901tx3mosaqv1l/terrain.png){:.no-border}
+![Example output from a program using the module.](/~olls/readme-imgs/graphics/terrain.png){:.no-border}
