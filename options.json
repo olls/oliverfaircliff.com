@@ -3,7 +3,7 @@
     "hosts": {
         "vps87319": {
             "output": "/var/www/oliverfaircliff.com",
-            "ignore": ["projects"],
+            "ignore": ["ld30", "googleae8ce7057b04e91a.html"],
             "url": "http://oliverfaircliff.com"
         },
         "raspberrypi": {
