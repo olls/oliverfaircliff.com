@@ -9,6 +9,10 @@
         "raspberrypi": {
             "output": "/var/www/projects/olls",
             "url": "http://pi.dvbris.com/projects/olls"
+        },
+        "oliverfaircliff": {
+            "output": "/var/www/oliverfaircliff.com",
+            "url": "http://178.62.98.205"
         }
     }
 }
