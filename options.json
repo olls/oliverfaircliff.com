@@ -1,5 +1,6 @@
 {
     "grunt": true,
+    "build_dir": "build",
     "hosts": {
         "raspberrypi": {
             "output": "/var/www/projects/olls",
