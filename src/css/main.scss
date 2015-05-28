@@ -73,9 +73,9 @@ header {
 
 section {
   background-color: white;
-  display: flex;
-  flex-flow: column nowrap;
   @media screen and (min-width: 1200px) {
+    display: flex;
+    flex-flow: column nowrap;
     flex-flow: row wrap;
   }
 
