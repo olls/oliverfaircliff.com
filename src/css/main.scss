@@ -74,8 +74,8 @@ header {
 section {
   background-color: white;
   display: flex;
-  flex-flow: column nowrap;
   @media screen and (min-width: 1200px) {
+    flex-flow: column nowrap;
     flex-flow: row wrap;
   }
 
@@ -116,6 +116,9 @@ section {
     }
     p {
       text-align: justify;
+      &:only-child {
+        text-align: left;
+      }
     }
 
     // Link or plain style tiles
