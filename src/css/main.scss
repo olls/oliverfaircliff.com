@@ -116,7 +116,7 @@ section {
     }
     p {
       text-align: justify;
-      &:only-child {
+      &:only-of-type {
         text-align: left;
       }
     }
@@ -172,7 +172,7 @@ section {
 
     // Tile specific styles
     &#bio {
-      img {
+      #logo {
         @media screen and (max-width: $small) {
           width: 100%;
           margin: 0 auto;
