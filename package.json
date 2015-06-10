@@ -1,8 +1,8 @@
 {
   "name": "oliverfaircliff.com",
   "repository": {
-    "type" : "git",
-    "url" : "http://github.com/olls/oliverfaircliff.com"
+    "type": "git",
+    "url": "http://github.com/olls/oliverfaircliff.com"
   },
   "version": "0.1.0",
   "devDependencies": {
@@ -14,6 +14,7 @@
     "grunt-shell": "~0.7.0",
     "grunt-contrib-htmlmin": "~0.2.0",
     "grunt-contrib-copy": "~0.5.0",
-    "grunt-processhtml": "~0.3.0"
+    "grunt-processhtml": "~0.3.0",
+    "grunt-contrib-watch": "~0.6.1"
   }
 }
