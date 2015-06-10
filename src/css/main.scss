@@ -90,8 +90,10 @@ section {
     display: block;
     min-width: 100%;
     @media screen and (max-width: $small) {
-      text-align: center;
-      font-size: 1em;
+      p {
+        text-align: left;
+        font-size: 1em;
+      }
     }
     // Different column arrangements
     @for $i from 2 through 10 {
