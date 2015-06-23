@@ -1,6 +1,7 @@
 {
     "build_cmd": ["grunt"],
     "copy_from": "build",
+    "ignore": ["ld30"],
     "hosts": {
         "k9": {
             "copy_to": "/var/www/projects/olls",
