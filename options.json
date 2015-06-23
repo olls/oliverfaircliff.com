@@ -1,7 +1,6 @@
 {
-    "build_cmd": ["grunt"],
+    "build_cmd": ["npm update", "npm run build"],
     "copy_from": "build",
-    "ignore": ["ld30"],
     "hosts": {
         "k9": {
             "copy_to": "/var/www/projects/olls",
@@ -9,7 +8,8 @@
         },
         "oliverfaircliff": {
             "copy_to": "/var/www/oliverfaircliff.com",
-            "url": "http://oliverfaircliff.com"
+            "url": "http://oliverfaircliff.com",
+            "ignore": ["ld30"]
         }
     }
 }
