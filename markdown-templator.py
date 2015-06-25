@@ -7,6 +7,7 @@ jn = os.path.join
 
 
 class Templator:
+
     def __init__(self, site_d, output_d, template_exts=()):
         self.template_exts = tuple(template_exts) + ('.html', '.htm')
         self.output_d = output_d
@@ -45,7 +46,8 @@ class Templator:
     def match_template(self, template_match):
         template = template_match.group()[2:-2]
         try:
-            content_f = [filename for filename in self.content if filename.endswith(template + '.md')][0]
+            content_f = [
+                filename for filename in self.content if filename.endswith(template + '.md')][0]
             found = True
         except IndexError:
             print('Couldn\'t find markdown file: ' + template)
