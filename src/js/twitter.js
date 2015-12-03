@@ -1,6 +1,6 @@
 function twitter_req (api, cb) {
   makeRequest(
-    'http://twitter.oliverfaircliff.com?api_url=' +
+    'https://twitter.oliverfaircliff.com?api_url=' +
       encodeURIComponent('https://api.twitter.com/1.1/' + api),
     function (text) {
       var data = JSON.parse(text);
@@ -26,10 +26,10 @@ var twitter_entities = [
     return '<a href="'+entity.expanded_url+'" title="'+entity.display_url+'" target="_blank">'+entity.display_url+'</a>';
   }],
   ['user_mentions', function (entity, text) {
-    return '<a href="http://twitter.com/'+entity.screen_name+'" title="'+entity.name+'" target="_blank">'+text+'</a>';
+    return '<a href="https://twitter.com/'+entity.screen_name+'" title="'+entity.name+'" target="_blank">'+text+'</a>';
   }],
   ['hashtags', function (entity, text) {
-    return '<a href="http://twitter.com/search?src=hash&q='+escape(entity.text)+'" title="#'+entity.text+'" target="_blank">'+text+'</a>';
+    return '<a href="https://twitter.com/search?src=hash&q='+escape(entity.text)+'" title="#'+entity.text+'" target="_blank">'+text+'</a>';
   }]
 ]
 
@@ -77,13 +77,13 @@ function twitter_widget (user, element) {
         var li = document.createElement('li');
         twitter_list.appendChild(li);
 
-        li.innerHTML = '<a href="http://twitter.com/'+item.user.screen_name+'/status/'+item.id_str+'" class="link" target="_blank"></a>' + final_str;
+        li.innerHTML = '<a href="https://twitter.com/'+item.user.screen_name+'/status/'+item.id_str+'" class="link" target="_blank"></a>' + final_str;
         li.setAttribute('data-type', item.type);
 
       });
       element.appendChild(twitter_list);
       var more = document.createElement('a');
-      more.href = 'http://twitter.com/' + user;
+      more.href = 'https://twitter.com/' + user;
       more.innerText = 'More...'
       more.target = '_blank';
       element.appendChild(more);
