@@ -7,4 +7,4 @@ I initially wrote quite a bad [interpreter](https://github.com/olls/maze_interpr
 
 ![A Maze program to add two numbers together.](/~olls/readme-imgs/maze-interpreter/fibonacci.png){:.no-border}
 
-It is written in Python, and can be downloaded from it's [Github repo](https://github.com/olls/maze-interpreter-v2) along with some example programs.
+It is written in Python, and can be downloaded from it's [GitHub repo](https://github.com/olls/maze-interpreter-v2) along with some example programs.
