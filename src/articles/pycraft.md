@@ -3,7 +3,7 @@ PyCraft
 
 This is a collaborative project I worked on with [Grit](https://geraintwhite.co.uk){:target="_blank"}. It's a 2D Minecraft-inspired game for the terminal.
 
-<div><img src="/~olls/readme-imgs/pycraft/game.png" alt="Climbing a hill in-game." class="no-border"></div>
+<div><img src="/~olls/readme-imgs/pycraft/pycraft.gif" alt="Demo of Pycraft" class="no-border"></div>
 
 Some features it sports:
 
